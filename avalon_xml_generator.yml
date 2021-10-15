@@ -1,0 +1,15 @@
+name: Avalon XML Generator
+description: Generate a metadata XML file compatible with the AvalonXmlAgent plugin for Plex.
+url:
+version: 0.1.0
+exec:
+  - python
+  - "{pluginDir}/avalon_xml_generator.py"
+interface: raw
+hooks:
+  - name: 'Metadata to XML'
+    description: Save local copy of scene metadata as XML alongside scene.
+    defaultArgs:
+      lanAddress: 192.168.50.202 #localhost
+    triggeredBy:
+      - Scene.Update.Post
